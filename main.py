@@ -14,7 +14,8 @@ screen.bgcolor("black")
 screen.title("Turtle Crossing")
 
 froggy = Player()
-
+screen.listen()
+screen.onkey(froggy.move, "w")
 
 game_is_on = True
 while game_is_on:
