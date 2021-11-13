@@ -14,6 +14,8 @@ screen.bgcolor("black")
 screen.title("Turtle Crossing")
 
 froggy = Player()
+car_manager = CarManager()
+
 screen.listen()
 screen.onkey(froggy.move, "w")
 
@@ -22,3 +24,5 @@ while game_is_on:
 
     time.sleep(0.1)
     screen.update()
+
+    car_manager.create_car()
