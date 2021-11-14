@@ -22,5 +22,6 @@ class Scoreboard(Turtle):
     def game_over(self):
         self.clear()
         self.color("red")
+        self.setx(0)
         self.sety(0)
-        self.write("Game Over!\n Final Score:" + str(self.count) + "crossings", font=STYLE, align='center')
+        self.write("Game Over!\n Final Score: " + str(self.count), font=STYLE, align='center')
