@@ -27,3 +27,16 @@ while game_is_on:
 
     car_manager.create_car()
     car_manager.move_car()
+
+    for car in car_manager.all_cars:
+        if car.distance(froggy) < 30:
+            print("Outch")
+            time.sleep(1)
+            froggy.back_to_start()
+
+    if froggy.ycor() > HEIGHT/2 - 20:
+        froggy.back_to_start()
+
+
+    # Todo: Point System for achieving road-crossing
+    # Todo: Increase Car speed when succeeding.
