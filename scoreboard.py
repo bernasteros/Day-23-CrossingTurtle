@@ -8,6 +8,7 @@ class Scoreboard(Turtle):
         super().__init__()
         self.hideturtle()
         self.sety(250)
+        self.setx(-200)
         self.color("white")
         self.penup()
         self.count = 0
