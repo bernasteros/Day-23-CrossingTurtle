@@ -15,6 +15,7 @@ screen.title("Turtle Crossing")
 
 froggy = Player()
 car_manager = CarManager()
+score = Scoreboard()
 
 screen.listen()
 screen.onkey(froggy.move, "w")
@@ -36,6 +37,7 @@ while game_is_on:
 
     if froggy.ycor() > HEIGHT/2 - 20:
         froggy.back_to_start()
+        score.count_up()
 
 
     # Todo: Point System for achieving road-crossing
