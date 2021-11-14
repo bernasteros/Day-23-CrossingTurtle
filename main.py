@@ -6,6 +6,7 @@ from scoreboard import Scoreboard
 
 HEIGHT = 600
 WIDTH = 600
+SPEED = 0.1
 
 screen = Screen()
 screen.setup(WIDTH, HEIGHT)
@@ -23,7 +24,7 @@ screen.onkey(froggy.move, "w")
 game_is_on = True
 while game_is_on:
 
-    time.sleep(0.1)
+    time.sleep(SPEED)
     screen.update()
 
     car_manager.create_car()
@@ -32,13 +33,12 @@ while game_is_on:
     for car in car_manager.all_cars:
         if car.distance(froggy) < 30:
             print("Outch")
-            time.sleep(1)
-            froggy.back_to_start()
+            game_is_on = False
 
     if froggy.ycor() > HEIGHT/2 - 20:
         froggy.back_to_start()
         score.count_up()
+        SPEED -= 0.005
 
-
-    # Todo: Point System for achieving road-crossing
-    # Todo: Increase Car speed when succeeding.
+score.game_over()
+screen.exitonclick()
